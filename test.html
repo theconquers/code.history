@@ -1,0 +1,284 @@
+<html>
+ <head>
+  <title>
+   Code.History
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fffb00;
+            color: #000;
+            text-align: center;
+        }
+        .container {
+            padding: 50px 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fffb00;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header .more-info-btn {
+            background-color: #000;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .main-content {
+            margin-top: 50px;
+        }
+        .main-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .main-content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .contribute-btn {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .contribute-btn i {
+            margin-right: 10px;
+        }
+        .code-snippet {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            margin-top: 30px;
+            text-align: left;
+            padding: 20px;
+            width: 80%;
+            max-width: 600px;
+        }
+        .code-snippet pre {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .code-snippet .window-controls {
+            display: flex;
+            justify-content: flex-start;
+            margin-bottom: 10px;
+        }
+        .code-snippet .window-controls span {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+        .code-snippet .window-controls .red {
+            background-color: #ff5f56;
+        }
+        .code-snippet .window-controls .yellow {
+            background-color: #ffbd2e;
+        }
+        .code-snippet .window-controls .green {
+            background-color: #27c93f;
+        }
+        .content-section {
+            background-color: #fff;
+            color: #000;
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .content-section-inner {
+            padding: 20px;
+        }
+        .content-section h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            display: inline-flex;
+            align-items: center;
+        }
+        .content-section p {
+            font-size: 16px;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        .plus-icon {
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .hidden-image {
+            display: none;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .main-content h2 {
+                font-size: 28px;
+            }
+            .main-content p {
+                font-size: 16px;
+            }
+            .code-snippet {
+                width: 100%;
+            }
+            .content-section h2 {
+                font-size: 24px;
+            }
+            .content-section p {
+                font-size: 14px;
+            }
+        }
+  </style>
+  <script>
+   function toggleImage(imageId) {
+            var image = document.getElementById(imageId);
+            if (image.style.display === 'none' || image.style.display === '') {
+                image.style.display = 'block';
+            } else {
+                image.style.display = 'none';
+            }
+        }
+  </script>
+ </head>
+ <body>
+  <div class="container">
+   <div class="header">
+    <h1>
+     Code.History
+    </h1>
+    <a class="more-info-btn" href="#">
+     More Info
+    </a>
+   </div>
+   <div class="main-content">
+    <h2>
+     Lịch sử của Lập trình Máy tính
+    </h2>
+    <p>
+     Lập trình máy tính, hay thường gọi là viết code, là một quá trình nghệ thuật và khoa học đã phát triển qua nhiều thập kỷ. Từ những ngày đầu của ngôn ngữ máy mã cho đến các hệ thống AI hiện đại, mỗi bước tiến đánh dấu một bước ngoặt trong việc hiểu và khai thác khả năng của máy tính.
+    </p>
+    <a class="contribute-btn" href="#">
+     <i class="fab fa-github">
+     </i>
+     Contribute
+    </a>
+   </div>
+   <div class="code-snippet">
+    <div class="window-controls">
+     <span class="red">
+     </span>
+     <span class="yellow">
+     </span>
+     <span class="green">
+     </span>
+    </div>
+    <pre>
+public class HelloWorld {
+    @FunctionalInterface
+    interface Greeter {
+        void greet();
+    }
+    abstract static class AbstractGreeting {
+        abstract String getMessage();
+    }
+    static class Greeting extends AbstractGreeting {
+        private final String message;
+
+        Greeting(String message) {
+            this.message = message;
+        }
+
+        @Override
+        String getMessage() {
+            return message;
+        }
+    }
+    static class GreetingFactory {
+        static AbstractGreeting createGreeting() {
+            return new Greeting("Hello, World!");
+        }
+    }
+    public static void main(String[] args) {
+        AbstractGreeting greeting = GreetingFactory.createGreeting();
+
+        Greeter greeter = () -&gt; System.out.println(greeting.getMessage());
+
+        greeter.greet();
+    }
+}
+            </pre>
+   </div>
+  </div>
+  <div class="content-section">
+   <div class="content-section-inner">
+    <h2>
+     Giai Đoạn Đầu: Các Ngôn Ngữ Máy Mã
+     <i class="fas fa-plus-circle plus-icon" onclick="toggleImage('hiddenImage1')">
+     </i>
+    </h2>
+    <img alt="Historical image of early computer programming" class="hidden-image" height="400" id="hiddenImage1" src="https://storage.googleapis.com/a1aa/image/CjPTi5DRKk7fcidercOdeP0Y7iDSgiVLAeeV6eC4ecqNhfiCUA.jpg" width="600"/>
+    <p>
+     Vào những năm 1940, các chương trình đầu tiên được viết trên ngôn ngữ máy mã (machine code), dùng hệ nhị phân (binary) để gây ra tổ hợp các thao tác trên máy tính. Việc viết code thời điểm này rất khó khăn vì tất cả đều phải thao tác trực tiếp với phần cứng.
+    </p>
+    <h2>
+     Giai Đoạn Ngôn Ngữ Assembly
+     <i class="fas fa-plus-circle plus-icon" onclick="toggleImage('hiddenImage2')">
+     </i>
+    </h2>
+    <img alt="Historical image of assembly language programming" class="hidden-image" height="400" id="hiddenImage2" src="https://storage.googleapis.com/a1aa/image/2DVFmwX2SZbQGtOnQu99JrdperffaaXZzuhfMvY7u1En8LKQB.jpg" width="600"/>
+    <p>
+     Vào cuối thập niên 1940, ngôn ngữ Assembly xuất hiện như một cải tiến. Assembly cho phép người dùng viết các câu lệnh đơn giản hơn, thay thế các chuỗi nhị phân bằng các từ khóa gần gũi với ngôn ngữ con người.
+    </p>
+    <h2>
+     Sự Ra Đời Của Ngôn Ngữ Cấp Cao
+     <i class="fas fa-plus-circle plus-icon" onclick="toggleImage('hiddenImage3')">
+     </i>
+    </h2>
+    <img alt="Historical image of high-level programming languages" class="hidden-image" height="400" id="hiddenImage3" src="https://storage.googleapis.com/a1aa/image/CbRPQveLG2SGGygt4z8ovBN1vbL7mDmpMEem1XYakflOeLKQB.jpg" width="600"/>
+    <p>
+     Thập kỷ 1950 đã chứng kiến sự ra đời của các ngôn ngữ lập trình cấp cao như FORTRAN và COBOL. Những ngôn ngữ này giúp đơn giản hoá việc lập trình, cho phép người dùng tập trung vào giải quyết bài toán thay vì quan tâm đến các chi tiết kỹ thuật.
+    </p>
+    <h2>
+     Thời Kỳ Ngôn Ngữ Hướng Đối Tượng
+     <i class="fas fa-plus-circle plus-icon" onclick="toggleImage('hiddenImage4')">
+     </i>
+    </h2>
+    <img alt="Historical image of object-oriented programming" class="hidden-image" height="400" id="hiddenImage4" src="https://storage.googleapis.com/a1aa/image/UYrEsiaLRdqgOxEj37asgQN2v9TtLOE9w4xVrCj2TPbwvoAF.jpg" width="600"/>
+    <p>
+     Thập kỷ 1980 đã đặt nền móng cho sự phát triển của ngôn ngữ hướng đối tượng (OOP) như C++ và Java. OOP giúp tổ chức code thành các “đối tượng”, gần gũi hơn với tư duy của con người, từ đó tăng tính tái sử dụng và dễ bảo trì.
+    </p>
+    <h2>
+     Kỷ Nguyên Lực Mới: Lập trình Trên Web và Di Động
+     <i class="fas fa-plus-circle plus-icon" onclick="toggleImage('hiddenImage5')">
+     </i>
+    </h2>
+    <img alt="Historical image of web and mobile programming" class="hidden-image" height="400" id="hiddenImage5" src="https://storage.googleapis.com/a1aa/image/oy4NoHVQfD2ADScCZzej8HAxjfa9HzfY99gRfm11hHM04XUgC.jpg" width="600"/>
+    <p>
+     Thập kỷ 1990 và 2000 chứng kiến sự bùng nổ của web và các thiết bị di động. Các ngôn ngữ như JavaScript, PHP và Python trở thành công cụ hữu hiệu đối với các nhà phát triển web. Song song, các ngôn ngữ như Swift và Kotlin trở thành chuẩn mực cho lập trình di động.
+    </p>
+    <h2>
+     Hiện Tượng AI và Tương Lai Của Code
+     <i class="fas fa-plus-circle plus-icon" onclick="toggleImage('hiddenImage6')">
+     </i>
+    </h2>
+    <img alt="Historical image of AI in programming" class="hidden-image" height="400" id="hiddenImage6" src="https://storage.googleapis.com/a1aa/image/lemzp3CknHVNDSTX9jsbH8v1aTbynip5COP8v7WfBZBEfFFoA.jpg" width="600"/>
+    <p>
+     Hiện nay, AI đang thay đổi toàn bộ cách lập trình và phát triển phần mềm. Các công cụ lập trình AI như GitHub Copilot và ChatGPT hỗ trợ tự động hóa việc viết code, kiểm tra lỗi, và tối ưu hóa hiệu suất. Các ngôn ngữ như Python, với thư viện mạnh mẽ về học máy (machine learning) và trí tuệ nhân tạo, đã trở thành tâm điểm trong ngành công nghiệp.
+    </p>
+    <p>
+     Trong tương lai, lập trình có thể trở nên thân thiện hơn với người dùng không chuyên, nhờ các nền tảng no-code và low-code. Các hệ thống AI cũng sẽ phát triển để không chỉ viết code mà còn tự học và sửa đổi theo ngữ cảnh, đẩy nhanh tốc độ đổi mới và sáng tạo trong công nghệ.
+    </p>
+   </div>
+  </div>
+ </body>
+</html>
